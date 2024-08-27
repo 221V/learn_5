@@ -1,21 +1,30 @@
 
-import std/math
+import std/[math, strutils]
+
+#[
+iterator countup2*(a: float, b: float, step = 1.0): float {.inline.} =
+  var res:float = a
+  while res <= b:
+    yield res
+    res += step
+]#
 
 var
-  #fahr, celsius: int # program.nim(4, 3) Hint: 'fahr' is declared but not used [XDeclaredButNotUsed]
-  celsius: int
-  low, up, step: int
+  #celsius: float
+  fahr, celsius: float
+  low, up, step: float
 
-low = 0   # from 0
-up = 300  # to 300
-step = 20 # with step 20
+low = 0.0   # from 0
+up = 300.0  # to 300
+step = 20.0 # with step 20
 
-echo "Fahrenheit\tCelsius"
+echo "Fahrenheit   Celsius"
 
-for fahr in countup(low, up, step):
-  #celsius = toInt( 5 * (fahr - 32) / 9 )
-  celsius = toInt( trunc( 5 * (fahr - 32) / 9 ))
-  echo fahr, "\t", celsius
+#for fahr in countup2(low, up, step):
+while fahr <= up:
+  celsius = (5.0 / 9.0) * (fahr - 32.0)
+  echo fahr, "   ", celsius.formatFloat(ffDecimal, 1)
+  fahr = fahr + step
 
 echo "done!"
 
