@@ -41,7 +41,7 @@ c2:
 
 # compile D program
 c3:
-	ldc2 -mtriple=x86_64-linux-gnu -O -static -of=program_d program.d
+	ldc2 -mtriple=x86_64-linux-gnu -w -O -static -of=program_d program.d
 #	ldc2 -mtriple=x86_64-linux-gnu -O --betterC -of=program_d program.d
 ## https://wiki.dlang.org/LDC
 
