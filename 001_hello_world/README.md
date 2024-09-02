@@ -47,7 +47,7 @@ Benchmark 2 (10000 runs): ./program_nim
   branch_misses      2.18K  ±  190       599   … 2.47K        1210 (12%)        💩+  9.1% ±  0.3%
 
 
-# C and D
+# C and D (writeln, no --betterC)
 $ make poop13
 poop ./program_c ./program_d
 Benchmark 1 (10000 runs): ./program_c
@@ -70,7 +70,7 @@ Benchmark 2 (10000 runs): ./program_d
   branch_misses       365   ±  566         0   … 2.63K        1573 (16%)        ⚡- 81.7% ±  0.6%
 
 
-# Nim and D
+# Nim and D (writeln, no --betterC)
 $ make poop23
 poop ./program_nim ./program_d
 Benchmark 1 (10000 runs): ./program_nim
@@ -91,5 +91,52 @@ Benchmark 2 (10000 runs): ./program_d
   cache_references    824   ±  893       229   … 5.17K        1232 (12%)        ⚡- 67.5% ±  0.9%
   cache_misses       17.2   ± 88.9         0   … 4.07K         990 (10%)        💩+123.6% ± 23.6%
   branch_misses       356   ±  550       144   … 2.66K        1582 (16%)        ⚡- 83.7% ±  0.5%
+
+
+
+# C and D (with printf and --betterC)
+$ make poop13
+poop ./program_c ./program_d
+Benchmark 1 (10000 runs): ./program_c
+  measurement          mean ± σ            min … max           outliers         delta
+  wall_time           235us ± 68.6us     195us … 1.35ms       1561 (16%)        0%
+  peak_rss           1.40MB ± 45.8KB    1.29MB … 1.47MB          0 ( 0%)        0%
+  cpu_cycles          216K  ± 5.49K        0   …  291K        1048 (10%)        0%
+  instructions        141K  ± 1.41K        0   …  142K          46 ( 0%)        0%
+  cache_references   2.31K  ±  763         0   … 6.40K        1531 (15%)        0%
+  cache_misses       7.50   ± 23.9         0   … 2.13K         568 ( 6%)        0%
+  branch_misses      2.00K  ±  176         0   … 2.32K        1215 (12%)        0%
+Benchmark 2 (10000 runs): ./program_d
+  measurement          mean ± σ            min … max           outliers         delta
+  wall_time           142us ± 38.6us     125us … 1.30ms       1511 (15%)        ⚡- 39.5% ±  0.7%
+  peak_rss            905KB ±    0       905KB …  905KB          0 ( 0%)        ⚡- 35.4% ±  0.1%
+  cpu_cycles          102K  ± 4.67K     99.6K  …  166K         678 ( 7%)        ⚡- 53.0% ±  0.1%
+  instructions       54.2K  ± 0.45      54.2K  … 54.2K        2495 (25%)        ⚡- 61.7% ±  0.0%
+  cache_references    128   ±  280        18   … 2.44K         742 ( 7%)        ⚡- 94.4% ±  0.7%
+  cache_misses       2.94   ± 24.9         0   … 1.82K         729 ( 7%)        ⚡- 60.8% ±  9.0%
+  branch_misses      37.9   ±  112         9   …  893          688 ( 7%)        ⚡- 98.1% ±  0.2%
+
+
+# Nim and D (with printf and --betterC)
+$ make poop23
+poop ./program_nim ./program_d
+Benchmark 1 (10000 runs): ./program_nim
+  measurement          mean ± σ            min … max           outliers         delta
+  wall_time           247us ± 73.3us     203us … 1.80ms       1763 (18%)        0%
+  peak_rss           1.59MB ± 51.8KB    1.47MB … 1.68MB          0 ( 0%)        0%
+  cpu_cycles          231K  ± 5.26K      197K  …  310K        1026 (10%)        0%
+  instructions        154K  ± 2.29       154K  …  154K          32 ( 0%)        0%
+  cache_references   2.62K  ±  796      1.44K  … 7.66K        1438 (14%)        0%
+  cache_misses       7.81   ± 32.4         0   … 2.99K         618 ( 6%)        0%
+  branch_misses      2.18K  ±  189       653   … 2.50K        1223 (12%)        0%
+Benchmark 2 (10000 runs): ./program_d
+  measurement          mean ± σ            min … max           outliers         delta
+  wall_time           152us ± 50.2us     126us … 1.43ms       1777 (18%)        ⚡- 38.6% ±  0.7%
+  peak_rss            901KB ±    0       901KB …  901KB          0 ( 0%)        ⚡- 43.3% ±  0.1%
+  cpu_cycles          102K  ± 5.41K        0   …  165K         806 ( 8%)        ⚡- 55.9% ±  0.1%
+  instructions       54.2K  ±  542         0   … 54.2K          12 ( 0%)        ⚡- 64.9% ±  0.0%
+  cache_references    128   ±  313         0   … 2.40K         818 ( 8%)        ⚡- 95.1% ±  0.6%
+  cache_misses       3.19   ± 26.5         0   … 1.75K         766 ( 8%)        ⚡- 59.2% ± 10.5%
+  branch_misses      44.1   ±  129         0   …  916          913 ( 9%)        ⚡- 98.0% ±  0.2%
 ```
 
