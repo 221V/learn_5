@@ -53,10 +53,10 @@ void main() {
   
   writefln("n = %s", n);
   
-  n = n + 1;
+  n += 1; // n = n + 1;
   writefln("n + 1 = %s", n);
   
-  n = n * n;
+  n *= n; // n = n * n;
   writefln("(n + 1) ^ 2 = %s", n);
 }
 

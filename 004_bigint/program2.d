@@ -30,10 +30,10 @@ void main()
   
   printf("n = %s\n", n.to!string.toStringz);
   
-  n = n + 1;
+  n += 1; // n = n + 1;
   printf("n + 1 = %s\n", n.to!string.toStringz);
   
-  n = n * n;
+  n *= n; // n = n * n;
   printf("(n + 1) ^ 2 = %s\n", n.to!string.toStringz);
   
   
