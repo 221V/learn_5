@@ -9,7 +9,8 @@ void main()
   import core.stdc.stdio : printf, scanf;
   import std.stdio : readln;
   import std.string : strip;
-  import std : to, toStringz;
+  import std.conv : to;
+  import std.string : toStringz;
   
   alias Z = MpZ;
   //alias Z = CopyableMpZ;
