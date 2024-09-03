@@ -7,7 +7,8 @@ import gmp;
 void main()
 {
   import core.stdc.stdio : printf;
-  import std : to, toStringz;
+  import std.conv : to;
+  import std.string : toStringz;
   
   alias Z = MpZ;
   //alias Z = CopyableMpZ;
@@ -19,11 +20,10 @@ void main()
   //a = 42;
   //b = a.dup;
   
-  Z num;
-  num = 0;
+  Z num = 0;
   
   for(ulong i = 1; i < 4_000_001; i++){
-    num = num + Z(i);
+    num = num + i;
   }
   
   printf("SUM(1, 4_000_000) = %s\n", num.to!string.toStringz);
@@ -32,7 +32,7 @@ void main()
   num = 1;
   
   for(ubyte j = 1; j < 101; j++){
-    num = num * Z(j);
+    num = num * j;
   }
   
   printf("PRODUCT(1, 100) = %s\n", num.to!string.toStringz);
