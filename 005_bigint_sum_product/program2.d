@@ -23,7 +23,7 @@ void main()
   Z num = 0;
   
   for(ulong i = 1; i < 4_000_001; i++){
-    num = num + i;
+    num += i;
   }
   
   printf("SUM(1, 4_000_000) = %s\n", num.to!string.toStringz);
@@ -32,7 +32,7 @@ void main()
   num = 1;
   
   for(ubyte j = 1; j < 101; j++){
-    num = num * j;
+    num *= j;
   }
   
   printf("PRODUCT(1, 100) = %s\n", num.to!string.toStringz);
