@@ -59,24 +59,24 @@ Benchmark 2 (30 runs): ./program_nim
 # C and D (with std.bigint)
 $ make poop13
 poop ./program_c ./program_d
-Benchmark 1 (476 runs): ./program_c
+Benchmark 1 (477 runs): ./program_c
   measurement          mean ± σ            min … max           outliers         delta
-  wall_time          10.4ms ± 1.13ms    9.85ms … 21.8ms         54 (11%)        0%
-  peak_rss           1.90MB ± 56.9KB    1.78MB … 2.00MB          0 ( 0%)        0%
-  cpu_cycles         36.6M  ±  758K     36.3M  … 42.3M          57 (12%)        0%
-  instructions        224M  ± 3.60       224M  …  224M           8 ( 2%)        0%
-  cache_references   6.07K  ± 1.55K     3.05K  … 8.76K           0 ( 0%)        0%
-  cache_misses        332   ±  581        10   … 4.48K          72 (15%)        0%
-  branch_misses      2.73K  ±  111      1.87K  … 2.98K          17 ( 4%)        0%
-Benchmark 2 (9 runs): ./program_d
+  wall_time          10.4ms ±  838us    9.88ms … 16.0ms         58 (12%)        0%
+  peak_rss           1.89MB ± 56.6KB    1.77MB … 2.00MB          0 ( 0%)        0%
+  cpu_cycles         36.5M  ±  570K     36.3M  … 42.3M          47 (10%)        0%
+  instructions        224M  ± 3.32       224M  …  224M           5 ( 1%)        0%
+  cache_references   6.72K  ± 1.13K     3.33K  … 9.62K          19 ( 4%)        0%
+  cache_misses        127   ±  356         7   … 3.70K          48 (10%)        0%
+  branch_misses      2.72K  ± 71.6      1.87K  … 3.00K          37 ( 8%)        0%
+Benchmark 2 (27 runs): ./program_d
   measurement          mean ± σ            min … max           outliers         delta
-  wall_time           570ms ± 5.32ms     566ms …  582ms          0 ( 0%)        💩+5367.4% ±  8.3%
-  peak_rss           3.06MB ± 3.41KB    3.06MB … 3.06MB          0 ( 0%)        💩+ 61.2% ±  2.0%
-  cpu_cycles         2.15G  ± 18.1M     2.14G  … 2.20G           1 (11%)        💩+5782.9% ±  4.4%
-  instructions       7.17G  ±  360K     7.17G  … 7.17G           0 ( 0%)        💩+3098.5% ±  0.0%
-  cache_references   3.55M  ± 87.2K     3.45M  … 3.76M           2 (22%)        💩+58380.2% ± 123.0%
-  cache_misses       18.6K  ± 3.33K     12.4K  … 24.5K           0 ( 0%)        💩+5490.3% ± 142.6%
-  branch_misses       170K  ±  489       169K  …  170K           0 ( 0%)        💩+6115.2% ±  3.1%
+  wall_time           186ms ± 6.78ms     179ms …  207ms          1 ( 4%)        💩+1681.2% ±  6.5%
+  peak_rss           3.00MB ± 2.34KB    2.99MB … 3.00MB          0 ( 0%)        💩+ 58.2% ±  1.1%
+  cpu_cycles          685M  ± 15.3M      676M  …  755M           1 ( 4%)        💩+1774.1% ±  3.7%
+  instructions       2.48G  ± 74.3K     2.48G  … 2.48G           0 ( 0%)        💩+1005.0% ±  0.0%
+  cache_references    964K  ± 90.0K      856K  … 1.29M           1 ( 4%)        💩+14236.4% ± 118.3%
+  cache_misses       22.8K  ± 19.1K     5.10K  … 77.9K           0 ( 0%)        💩+17826.3% ± 1332.5%
+  branch_misses      47.7K  ±  545      46.9K  … 49.6K           1 ( 4%)        💩+1656.6% ±  2.0%
 
 
 # Nim and D (with std.bigint)
@@ -84,22 +84,22 @@ $ make poop23
 poop ./program_nim ./program_d
 Benchmark 1 (30 runs): ./program_nim
   measurement          mean ± σ            min … max           outliers         delta
-  wall_time           168ms ± 1.79ms     166ms …  175ms          1 ( 3%)        0%
-  peak_rss           1.65MB ± 56.9KB    1.58MB … 1.75MB          0 ( 0%)        0%
-  cpu_cycles          634M  ± 4.98M      627M  …  648M           0 ( 0%)        0%
-  instructions       2.24G  ± 45.4      2.24G  … 2.24G           6 (20%)        0%
-  cache_references   6.74K  ±  464      6.26K  … 8.24K           2 ( 7%)        0%
-  cache_misses       1.43K  ± 1.26K      267   … 4.86K           2 ( 7%)        0%
-  branch_misses      2.71K  ± 49.3      2.62K  … 2.81K           0 ( 0%)        0%
-Benchmark 2 (9 runs): ./program_d
+  wall_time           167ms ± 1.38ms     166ms …  174ms          2 ( 7%)        0%
+  peak_rss           1.66MB ± 63.2KB    1.58MB … 1.75MB          0 ( 0%)        0%
+  cpu_cycles          632M  ± 2.91M      627M  …  640M           1 ( 3%)        0%
+  instructions       2.24G  ± 62.6      2.24G  … 2.24G           0 ( 0%)        0%
+  cache_references   6.85K  ±  624      6.13K  … 8.11K           0 ( 0%)        0%
+  cache_misses       3.00K  ± 1.62K      377   … 5.58K           0 ( 0%)        0%
+  branch_misses      2.73K  ± 93.1      2.62K  … 3.02K           1 ( 3%)        0%
+Benchmark 2 (28 runs): ./program_d
   measurement          mean ± σ            min … max           outliers         delta
-  wall_time           569ms ± 2.13ms     566ms …  573ms          0 ( 0%)        💩+238.7% ±  0.9%
-  peak_rss           3.06MB ± 2.05KB    3.06MB … 3.06MB          0 ( 0%)        💩+ 84.9% ±  2.4%
-  cpu_cycles         2.15G  ± 7.97M     2.14G  … 2.16G           0 ( 0%)        💩+239.3% ±  0.7%
-  instructions       7.17G  ±  289K     7.17G  … 7.17G           0 ( 0%)        💩+220.4% ±  0.0%
-  cache_references   3.56M  ±  142K     3.36M  … 3.73M           0 ( 0%)        💩+52696.6% ± 762.4%
-  cache_misses       18.0K  ± 2.94K     13.8K  … 22.2K           0 ( 0%)        💩+1155.9% ± 95.5%
-  branch_misses       169K  ±  629       168K  …  170K           1 (11%)        💩+6153.7% ±  8.5%
+  wall_time           183ms ± 2.44ms     180ms …  190ms          3 (11%)        💩+  9.3% ±  0.6%
+  peak_rss           3.00MB ± 2.19KB    2.99MB … 3.00MB          0 ( 0%)        💩+ 80.8% ±  1.4%
+  cpu_cycles          683M  ± 7.38M      672M  …  708M           1 ( 4%)        💩+  8.1% ±  0.5%
+  instructions       2.48G  ± 4.67M     2.46G  … 2.48G           2 ( 7%)        💩+ 10.6% ±  0.1%
+  cache_references    962K  ± 53.0K      863K  … 1.09M           0 ( 0%)        💩+13948.8% ± 283.5%
+  cache_misses       15.5K  ± 7.14K     8.66K  … 39.6K           1 ( 4%)        💩+417.3% ± 89.6%
+  branch_misses      47.8K  ±  345      47.3K  … 48.5K           0 ( 0%)        💩+1654.7% ±  4.8%
 
 
 # C and D (with GMP)
