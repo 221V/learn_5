@@ -1,0 +1,12 @@
+{
+  "name": "program2.d",
+  "mainSourceFile": "program2.d",
+  "sourceFiles": ["program2.d"],
+  "targetName": "program_d",
+  "targetType": "executable",
+  "dflags": ["-w", "-O", "-static"],
+  "dependencies": {
+    "gmp-d": "~>0.2.17"
+    
+  }
+}

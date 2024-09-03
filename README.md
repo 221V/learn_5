@@ -12,8 +12,15 @@ $ make c1
 # OR compile only Nim program
 $ make c2
 
-# OR compile only D program
+# OR compile only D program (ldc2, sigle file program.d without deps)
 $ make c3
+
+# OR compile only D program (with deps, with source folder, with dub.json)
+$ make c31
+
+# OR compile only D program (ldc2, with deps, without source folder, with dub.json)
+$ make c32
+
 
 # run C program
 $ make run1

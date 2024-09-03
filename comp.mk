@@ -39,10 +39,21 @@ c2:
 ## https://nim-lang.org/docs/nimc.html
 
 
-# compile D program
+# compile D program (ldc2, sigle file without deps)
 c3:
 	ldc2 -mtriple=x86_64-linux-gnu -w -O --betterC -static -of=program_d program.d
 ## https://wiki.dlang.org/LDC
+
+
+# compile D program (with deps, with source folder, with dub.json)
+c31:
+	dub build --force
+
+
+# compile D program (ldc2, with deps, without source folder, with dub.json)
+c32:
+	dub build --compiler ldc2 --build release --force
+
 
 
 # run C program
