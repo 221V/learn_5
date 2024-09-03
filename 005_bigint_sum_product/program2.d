@@ -22,7 +22,11 @@ void main()
   
   Z num = 0;
   
-  for(ulong i = 1; i < 4_000_001; i++){
+  //for(ulong i = 1; i < 4_000_001; i++){
+  //  num += i;
+  //}
+  
+  foreach(i; 1 .. 4_000_001){
     num += i;
   }
   
@@ -31,7 +35,11 @@ void main()
   
   num = 1;
   
-  for(ubyte j = 1; j < 101; j++){
+  //for(ubyte j = 1; j < 101; j++){
+  //  num *= j;
+  //}
+  
+  foreach(j; 1 .. 101){
     num *= j;
   }
   
