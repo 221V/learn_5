@@ -1,10 +1,8 @@
 
 import std.bigint;
-import core.stdc.stdio : printf, scanf;
-import std.stdio : writefln, readln;
-import std.string : strip;
+import std.stdio : writefln;
 
-void main() {
+void main(){
   BigInt num = 0;
   
   for(ulong i = 1; i < 4_000_001; i++){
