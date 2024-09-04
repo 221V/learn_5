@@ -10,8 +10,8 @@ void main()
   import std.conv : to;
   import std.string : toStringz;
   
-  alias Z = MpZ;
-  //alias Z = CopyableMpZ;
+  //alias Z = MpZ;
+  alias Z = CopyableMpZ;
   //alias MpZ = _Z!(false);
   
   //Z a;
