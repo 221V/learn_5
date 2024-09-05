@@ -39,9 +39,15 @@ c2:
 ## https://nim-lang.org/docs/nimc.html
 
 
-# compile D program (ldc2, sigle file without deps)
+# compile D program (ldc2, with --betterC, single file without deps)
 c3:
 	ldc2 -mtriple=x86_64-linux-gnu -w -O --betterC -static -of=program_d program.d
+## https://wiki.dlang.org/LDC
+
+
+# compile D program (ldc2, no --betterC, single file without deps)
+c30:
+	ldc2 -mtriple=x86_64-linux-gnu -w -O -static -of=program_d program.d
 ## https://wiki.dlang.org/LDC
 
 
@@ -87,5 +93,5 @@ poop23:
 
 
 default: all
-.PHONY: clean clean1 clean2 clean3 all c1 c2 c3 run1 run2 run3 poop12 poop13 poop23
+.PHONY: clean clean1 clean2 clean3 all c1 c2 c3 c30 c31 c32 run1 run2 run3 poop12 poop13 poop23
 
