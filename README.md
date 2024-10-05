@@ -71,6 +71,11 @@ git hash: 5935c3bfa9fec6505394867b23510eb5cbab3dbf
 active boot switches: -d:release
 
 
+# OCaml
+~> utop
+Welcome to utop version 2.14.0 (using OCaml version 5.2.0)!
+
+
 $ ldc2 -v
 binary    /home/e/.dlang/bin/ldc2
 version   1.39.0 (DMD v2.109.1, LLVM 18.1.6)

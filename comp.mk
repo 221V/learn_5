@@ -61,6 +61,11 @@ c32:
 	dub build --compiler ldc2 --build release --force
 
 
+c4:
+	ocamlopt -o program_oc program.ml
+#	ocamlopt -o program module1.ml module2.ml
+
+
 
 # run C program
 run1:
@@ -75,6 +80,12 @@ run2:
 # run D program
 run3:
 	./program_d
+
+
+# run OCaml program
+run4:
+	./program_oc
+
 
 
 # run poop benchmark C and Nim programs

@@ -3,4 +3,7 @@
 */program_d
 */program_d.o
 */libbigint.a
-
+*/program_oc
+*/program.o
+*/program.cmi
+*/program.cmx
