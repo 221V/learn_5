@@ -61,6 +61,7 @@ c32:
 	dub build --compiler ldc2 --build release --force
 
 
+# compile OCaml program
 c4:
 	ocamlopt -o program_oc program.ml
 #	ocamlopt -o program module1.ml module2.ml

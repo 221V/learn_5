@@ -24,6 +24,9 @@ $ make c31
 # OR compile only D program (ldc2, with deps, without source folder, with dub.json)
 $ make c32
 
+# compile OCaml program (ocamlopt)
+$ make c4
+
 
 # run C program
 $ make run1
@@ -33,6 +36,9 @@ $ make run2
 
 # run D program
 $ make run3
+
+# run OCaml program
+$ make run4
 
 # run poop benchmark C and Nim programs
 $ make poop12
