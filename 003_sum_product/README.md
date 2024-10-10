@@ -91,7 +91,7 @@ Benchmark 2 (9058 runs): ./program_oc
   branch_misses      5.71K  ±  193      4.52K  … 6.47K         267 ( 3%)        💩+178.9% ±  0.3%
 
 
-# OCaml v1 program
+# OCaml v1 program -- todo bench time for v1 program with more cycles inside the program (OCaml VM may starts long time so bench with poop can be error)
 $ make poop41
 poop ./program_c ./program_oc
 Benchmark 1 (10000 runs): ./program_c
