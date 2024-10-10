@@ -104,6 +104,16 @@ poop23:
 	poop ./program_nim ./program_d
 
 
+# run poop benchmark OCaml and C programs
+poop41:
+	poop ./program_c ./program_oc
+
+
+# run poop benchmark OCaml and D programs
+poop43:
+	poop ./program_oc ./program_d
+
+
 default: all
-.PHONY: clean clean1 clean2 clean3 all c1 c2 c3 c30 c31 c32 run1 run2 run3 poop12 poop13 poop23
+.PHONY: clean clean1 clean2 clean3 all c1 c2 c3 c30 c31 c32 c4 run1 run2 run3 run4 poop12 poop13 poop23 poop41 poop43
 
