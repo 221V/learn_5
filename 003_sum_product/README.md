@@ -160,6 +160,27 @@ Benchmark 2 (10000 runs): ./program_d
   branch_misses      45.0   ±  136         6   …  946          688 ( 7%)        ⚡- 99.2% ±  0.1%
 
 
+# OCaml v2 program
+$ poop ./program_oc ./program_nim
+Benchmark 1 (8880 runs): ./program_oc
+  measurement          mean ± σ            min … max           outliers         delta
+  wall_time           544us ±  107us     420us … 1.99ms        638 ( 7%)        0%
+  peak_rss           3.02MB ± 64.6KB    2.86MB … 3.14MB          0 ( 0%)        0%
+  cpu_cycles          548K  ± 8.86K      514K  …  642K          83 ( 1%)        0%
+  instructions        488K  ±  120       476K  …  488K         137 ( 2%)        0%
+  cache_references   12.3K  ±  677      9.38K  … 17.4K        1002 (11%)        0%
+  cache_misses       32.1   ±  117         0   … 9.65K         755 ( 9%)        0%
+  branch_misses      5.66K  ±  190      4.63K  … 6.25K         261 ( 3%)        0%
+Benchmark 2 (10000 runs): ./program_nim
+  measurement          mean ± σ            min … max           outliers         delta
+  wall_time           246us ± 54.6us     213us … 1.29ms       1532 (15%)        ⚡- 54.8% ±  0.4%
+  peak_rss           1.61MB ± 55.9KB    1.50MB … 1.70MB          0 ( 0%)        ⚡- 46.5% ±  0.1%
+  cpu_cycles          237K  ± 4.99K      206K  …  334K         786 ( 8%)        ⚡- 56.7% ±  0.0%
+  instructions        158K  ± 5.54       157K  …  158K         992 (10%)        ⚡- 67.7% ±  0.0%
+  cache_references   3.09K  ±  702      1.67K  … 7.01K         597 ( 6%)        ⚡- 74.9% ±  0.2%
+  cache_misses       9.35   ± 15.8         0   …  855          594 ( 6%)        ⚡- 70.9% ±  7.2%
+  branch_misses      2.19K  ±  175       964   … 2.50K        1244 (12%)        ⚡- 61.2% ±  0.1%
+
 
 # same for C and Nim and D and OCaml
 Sum numbers 1-100:
