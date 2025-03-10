@@ -4,7 +4,7 @@ import gmp;
 
 //@safe pure nothrow @nogc:
 //@nogc:
-void main()
+extern(C) void main()
 {
   import core.stdc.stdio : printf;
   import std.conv : to;
