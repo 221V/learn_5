@@ -40,6 +40,17 @@ $ make run2
 done!
 
 
+$ make run3
+./program_d
+7 3 5
+5
+15 20 40
+20
+300 550 137
+300
+done!
+
+
 $ make poop12
 poop ./program_c ./program_nim
 Benchmark 1 (10000 runs): ./program_c
