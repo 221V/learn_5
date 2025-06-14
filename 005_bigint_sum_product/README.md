@@ -34,6 +34,14 @@ SUM(1, 4_000_000) = 8000002000000
 PRODUCT(1, 100) = 93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000
 
 
+# same - Zig
+$ make c5
+$ make run5
+./program_zig
+SUM(1, 4_000_000) = 8000002000000
+PRODUCT(1, 100) = 933262154439441526816992388562667004907159682643816214685929638952175999932299156089414639761565182862536979208272237582511852109168640000000000000000000000
+
+
 $ make poop12
 poop ./program_c ./program_nim
 Benchmark 1 (480 runs): ./program_c
@@ -146,5 +154,28 @@ Benchmark 2 (433 runs): ./program_d
   cache_references   5.14K  ± 2.83K     1.56K  … 10.5K           0 ( 0%)          - 15.8% ± 16.6%
   cache_misses        358   ±  620        11   … 6.27K          46 (11%)        ⚡- 87.9% ±  8.3%
   branch_misses      1.93K  ± 1.11K      264   … 3.05K           0 ( 0%)        ⚡- 28.4% ± 14.8%
+
+
+# C and Zig
+$ make poop15
+poop ./program_c ./program_zig
+Benchmark 1 (433 runs): ./program_c
+  measurement          mean ± σ            min … max           outliers         delta
+  wall_time          11.5ms ±  690us    11.0ms … 19.3ms         39 ( 9%)        0%
+  peak_rss           1.91MB ± 58.1KB    1.77MB … 1.99MB          0 ( 0%)        0%
+  cpu_cycles         41.2M  ±  640K     34.5M  … 45.3M          28 ( 6%)        0%
+  instructions        200M  ± 1.61M      167M  …  200M          14 ( 3%)        0%
+  cache_references   6.27K  ± 1.37K     3.65K  … 8.72K           0 ( 0%)        0%
+  cache_misses        488   ±  564        58   … 4.44K          46 (11%)        0%
+  branch_misses      2.86K  ±  117      2.02K  … 3.18K          16 ( 4%)        0%
+Benchmark 2 (10000 runs): ./program_zig
+  measurement          mean ± σ            min … max           outliers         delta
+  wall_time           337us ± 43.7us     305us … 1.91ms       1057 (11%)        ⚡- 97.1% ±  0.1%
+  peak_rss            905KB ±    0       905KB …  905KB          0 ( 0%)        ⚡- 52.5% ±  0.1%
+  cpu_cycles          899K  ± 15.7K      321K  … 1.08M         758 ( 8%)        ⚡- 97.8% ±  0.0%
+  instructions       5.12M  ± 37.1K     1.41M  … 5.12M        3015 (30%)        ⚡- 97.4% ±  0.0%
+  cache_references   15.2   ± 57.2         0   …  419         1151 (12%)        ⚡- 99.8% ±  0.4%
+  cache_misses       1.67   ± 5.06         0   …  239         1566 (16%)        ⚡- 99.7% ±  2.3%
+  branch_misses       112   ± 16.1        32   …  210          835 ( 8%)        ⚡- 96.1% ±  0.1%
 ```
 

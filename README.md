@@ -88,6 +88,10 @@ version   1.39.0 (DMD v2.109.1, LLVM 18.1.6)
 config    /home/e/.dlang/etc/ldc2.conf (x86_64-unknown-linux-gnu)
 
 
+$ zig version
+0.13.0
+
+
 ## poop 0.4.0
 ## https://github.com/andrewrk/poop
 

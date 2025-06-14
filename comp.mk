@@ -67,6 +67,10 @@ c4:
 #	ocamlopt -o program module1.ml module2.ml
 
 
+# compile Zig program
+c5:
+	zig build-exe program.zig -O ReleaseFast -fstrip --name program_zig
+
 
 # run C program
 run1:
@@ -86,6 +90,11 @@ run3:
 # run OCaml program
 run4:
 	./program_oc
+
+
+# run Zig program
+run5:
+	./program_zig
 
 
 
@@ -114,6 +123,11 @@ poop43:
 	poop ./program_oc ./program_d
 
 
+# run poop benchmark C and Zig programs
+poop15:
+	poop ./program_c ./program_zig
+
+
 default: all
-.PHONY: clean clean1 clean2 clean3 all c1 c2 c3 c30 c31 c32 c4 run1 run2 run3 run4 poop12 poop13 poop23 poop41 poop43
+.PHONY: clean clean1 clean2 clean3 all c1 c2 c3 c30 c31 c32 c4 c5 run1 run2 run3 run4 run5 poop12 poop13 poop23 poop41 poop43 poop15
 
