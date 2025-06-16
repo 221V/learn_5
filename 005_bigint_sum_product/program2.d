@@ -2,23 +2,19 @@
 
 import gmp;
 
+import core.stdc.stdio : printf;
+import core.stdc.stdlib : malloc, free;
+
+extern(C) @nogc char* __gmpz_get_str(char* buf, int base, const(gmp.MpZ)* num);
+extern(C) @nogc size_t __gmpz_sizeinbase(const(gmp.MpZ)* num, int base);
+
 //@safe pure nothrow @nogc:
-//@nogc:
+@nogc:
 extern(C) void main()
 {
-  import core.stdc.stdio : printf;
-  import std.conv : to;
-  import std.string : toStringz;
-  
   //alias Z = MpZ;
-  alias Z = CopyableMpZ;
-  //alias MpZ = _Z!(false);
-  
-  //Z a;
-  //Z b;
-  
-  //a = 42;
-  //b = a.dup;
+  alias Z = gmp.MpZ;
+  //alias Z = CopyableMpZ;
   
   Z num = 0;
   
@@ -30,7 +26,13 @@ extern(C) void main()
     num += i;
   }
   
-  printf("SUM(1, 4_000_000) = %s\n", num.to!string.toStringz);
+  size_t size = __gmpz_sizeinbase(&num, 10) + 2; // +2 for sign and '\0'
+  char* buffer = cast(char*)malloc(size);
+  __gmpz_get_str(buffer, 10, &num); // to string
+  
+  printf("SUM(1, 4_000_000) = %s\n", buffer);
+  free(buffer);
+  
   
   
   num = 1;
@@ -43,16 +45,13 @@ extern(C) void main()
     num *= j;
   }
   
-  printf("PRODUCT(1, 100) = %s\n", num.to!string.toStringz);
+  size = __gmpz_sizeinbase(&num, 10) + 2;
+  buffer = cast(char*)malloc(size);
+  __gmpz_get_str(buffer, 10, &num);
   
-  //printf("%llu\n", Z.mersennePrime(15));
-  //printf("%s\n", a.to!string.toStringz);
-  //printf("%s\n", Z.mersennePrime(15).to!string.toStringz);
-  
+  printf("PRODUCT(1, 100) = %s\n", buffer);
+  free(buffer);
 }
-
-// dub add gmp-d
-// dub build --force
 
 // dub build --compiler ldc2 --build release --force
 // "dflags": ["-w", "-O", "-static"],
@@ -62,5 +61,4 @@ extern(C) void main()
 
 // $ make c32
 // $ make run3
-
 
