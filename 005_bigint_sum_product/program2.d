@@ -5,6 +5,7 @@ import gmp;
 import core.stdc.stdio : printf;
 import core.stdc.stdlib : malloc, free;
 
+extern(C) @nogc void __gmpz_init_set_str(gmp.MpZ* rop, const char* str, int base);
 extern(C) @nogc char* __gmpz_get_str(char* buf, int base, const(gmp.MpZ)* num);
 extern(C) @nogc size_t __gmpz_sizeinbase(const(gmp.MpZ)* num, int base);
 
@@ -35,7 +36,9 @@ extern(C) void main()
   
   
   
-  num = 1;
+  int base = 10;
+  const char* str1 = "1";
+  __gmpz_init_set_str(&num, str1, base);
   
   //for(ubyte j = 1; j < 101; j++){
   //  num *= j;
