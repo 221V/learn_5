@@ -67,15 +67,6 @@ c2c --version
 version: 8f27b650
 
 
-$ nim -v
-Nim Compiler Version 2.0.8 [Linux: amd64]
-Compiled at 2024-07-03
-Copyright (c) 2006-2023 by Andreas Rumpf
-
-git hash: 5935c3bfa9fec6505394867b23510eb5cbab3dbf
-active boot switches: -d:release
-
-
 $ ldc2 -v
 binary    /home/e/.dlang/bin/ldc2
 version   1.39.0 (DMD v2.109.1, LLVM 18.1.6)
@@ -86,10 +77,12 @@ $ zig version
 0.13.0
 
 
+# Nim and OCaml - deleted
+
+
 ## poop 0.4.0
 ## https://github.com/andrewrk/poop
 
 ## CPU 12th Gen Intel(R) Core(TM) i7-12700H  (ASUS TUF Gaming F15 FX507ZE)
 ```
-
 

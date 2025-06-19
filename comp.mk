@@ -3,7 +3,6 @@
 # clean all compiled
 clean:
 	rm program_c
-	rm program_nim
 	rm program_d
 	rm -rf output
 
@@ -16,10 +15,6 @@ clean1:
 # clean C2 compiled
 clean2:
 	rm -rf output
-
-# clean Nim compiled
-clean21:
-	rm program_nim
 
 
 # clean D compiled
@@ -40,13 +35,6 @@ c1:
 # compile C2 program
 c2:
 	c2c program.c2
-
-
-# compile Nim program
-c21:
-	nim c --verbosity:0 -d:release -o:program_nim program.nim
-#	nim c -d:release -o:program_nim program.nim
-## https://nim-lang.org/docs/nimc.html
 
 
 # compile D program (ldc2, with --betterC, single file without deps)
@@ -86,11 +74,6 @@ run2:
 	./output/program/program
 
 
-# run Nim program
-run21:
-	./program_nim
-
-
 # run D program
 run3:
 	./program_d
@@ -107,19 +90,9 @@ poop12:
 	poop ./program_c ./output/program/program
 
 
-# run poop benchmark C and Nim programs
-poop121:
-	poop ./program_c ./program_nim
-
-
 # run poop benchmark C and D programs
 poop13:
 	poop ./program_c ./program_d
-
-
-# run poop benchmark Nim and D programs
-poop23:
-	poop ./program_nim ./program_d
 
 
 # run poop benchmark C and Zig programs
@@ -128,5 +101,5 @@ poop15:
 
 
 default: all
-.PHONY: clean clean1 clean2 clean21 clean3 all c1 c2 c21 c3 c30 c31 c32 c5 run1 run2 run21 run3 run5 poop121 poop13 poop23 poop15
+.PHONY: clean clean1 clean2 clean3 all c1 c2 c3 c30 c31 c32 c5 run1 run2 run3 run5 poop12 poop13 poop15
 
