@@ -3,6 +3,49 @@
 
 ```
 $ make poop12
+poop ./program_c ./output/program/program
+Benchmark 1 (10000 runs): ./program_c
+  measurement          mean ± σ            min … max           outliers         delta
+  wall_time           236us ± 53.1us     206us … 1.31ms       1482 (15%)        0%
+  peak_rss           1.62MB ± 38.5KB    1.56MB … 1.74MB        694 ( 7%)        0%
+  cpu_cycles          223K  ± 5.74K      719   …  333K        1018 (10%)        0%
+  instructions        146K  ± 1.53K        1   …  146K          50 ( 1%)        0%
+  cache_references   2.52K  ±  652         0   … 6.86K        1022 (10%)        0%
+  cache_misses       20.5   ± 51.3         0   … 4.40K         780 ( 8%)        0%
+  branch_misses      2.05K  ±  180         0   … 2.42K        1217 (12%)        0%
+Benchmark 2 (10000 runs): ./output/program/program
+  measurement          mean ± σ            min … max           outliers         delta
+  wall_time           241us ± 51.0us     205us … 1.12ms       1457 (15%)        💩+  1.8% ±  0.6%
+  peak_rss           1.59MB ± 47.1KB    1.50MB … 1.68MB          0 ( 0%)        ⚡-  2.2% ±  0.1%
+  cpu_cycles          224K  ± 5.56K        0   …  275K        1043 (10%)          +  0.2% ±  0.1%
+  instructions        146K  ± 1.87K        0   …  146K          62 ( 1%)          -  0.1% ±  0.0%
+  cache_references   2.62K  ±  705         0   … 6.73K        1096 (11%)        💩+  3.7% ±  0.7%
+  cache_misses       15.1   ± 17.0         0   …  385          618 ( 6%)        ⚡- 26.6% ±  5.2%
+  branch_misses      2.07K  ±  184         0   … 2.43K        1204 (12%)          +  1.2% ±  0.2%
+
+$ make poop12
+poop ./program_c ./output/program/program
+Benchmark 1 (10000 runs): ./program_c
+  measurement          mean ± σ            min … max           outliers         delta
+  wall_time           250us ± 79.0us     202us … 1.34ms       1661 (17%)        0%
+  peak_rss           1.62MB ± 37.6KB    1.56MB … 1.74MB        651 ( 7%)        0%
+  cpu_cycles          223K  ± 5.25K      190K  …  303K        1083 (11%)        0%
+  instructions        146K  ± 2.28       146K  …  146K          47 ( 0%)        0%
+  cache_references   2.51K  ±  826      1.18K  … 6.47K         785 ( 8%)        0%
+  cache_misses       16.7   ± 47.0         0   … 4.28K         559 ( 6%)        0%
+  branch_misses      2.04K  ±  184       666   … 2.40K        1253 (13%)        0%
+Benchmark 2 (10000 runs): ./output/program/program
+  measurement          mean ± σ            min … max           outliers         delta
+  wall_time           237us ± 47.8us     201us … 1.11ms       1312 (13%)        ⚡-  5.1% ±  0.7%
+  peak_rss           1.59MB ± 47.1KB    1.50MB … 1.68MB          0 ( 0%)        ⚡-  2.2% ±  0.1%
+  cpu_cycles          224K  ± 5.30K      189K  …  344K         963 (10%)          +  0.2% ±  0.1%
+  instructions        146K  ± 2.13       146K  …  146K          45 ( 0%)          -  0.0% ±  0.0%
+  cache_references   2.38K  ±  716      1.27K  … 6.44K         546 ( 5%)        ⚡-  5.4% ±  0.9%
+  cache_misses       18.3   ± 22.6         0   …  411          675 ( 7%)        💩+  9.7% ±  6.1%
+  branch_misses      2.07K  ±  185       585   … 2.42K        1182 (12%)        💩+  1.4% ±  0.3%
+
+
+$ make poop121
 poop ./program_c ./program_nim
 Benchmark 1 (10000 runs): ./program_c
   measurement          mean ± σ            min … max           outliers         delta
@@ -182,7 +225,7 @@ Benchmark 2 (10000 runs): ./program_nim
   branch_misses      2.19K  ±  175       964   … 2.50K        1244 (12%)        ⚡- 61.2% ±  0.1%
 
 
-# same for C and Nim and D and OCaml
+# same for C and C2 and Nim and D and OCaml
 Sum numbers 1-100:
 5050
 Product numbers 1-15:

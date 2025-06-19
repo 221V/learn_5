@@ -1,0 +1,24 @@
+
+module program;
+
+import stdio as io;
+
+public fn i32 main(i32 argc, char** argv){
+  u16 sum = 0;
+  io.printf("Sum numbers 1-100:\n");
+  
+  for(u8 num = 1; num < 101; num++){
+    sum = sum + num;
+  }
+  io.printf("%d\n", sum);
+  
+  u64 prod = 1;
+  io.printf("Product numbers 1-15:\n");
+  for(u8 num2 = 1; num2 < 16; num2++){
+    prod = prod * num2;
+  }
+  io.printf("%d\n", prod);
+  
+  return 0;
+}
+

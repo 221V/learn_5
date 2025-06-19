@@ -68,6 +68,11 @@ $ gcc --version
 gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
 
 
+# https://github.com/c2lang/c2compiler
+c2c --version
+version: 8f27b650
+
+
 $ nim -v
 Nim Compiler Version 2.0.8 [Linux: amd64]
 Compiled at 2024-07-03

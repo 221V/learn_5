@@ -5,6 +5,7 @@ clean:
 	rm program_c
 	rm program_nim
 	rm program_d
+	rm -rf output
 
 
 # clean C compiled
@@ -12,8 +13,12 @@ clean1:
 	rm program_c
 
 
-# clean Nim compiled
+# clean C2 compiled
 clean2:
+	rm -rf output
+
+# clean Nim compiled
+clean21:
 	rm program_nim
 
 
@@ -32,8 +37,13 @@ c1:
 ## https://web.stanford.edu/class/archive/cs/cs107/cs107.1202/resources/gcc
 
 
-# compile Nim program
+# compile C2 program
 c2:
+	c2c program.c2
+
+
+# compile Nim program
+c21:
 	nim c --verbosity:0 -d:release -o:program_nim program.nim
 #	nim c -d:release -o:program_nim program.nim
 ## https://nim-lang.org/docs/nimc.html
@@ -77,8 +87,13 @@ run1:
 	./program_c
 
 
-# run Nim program
+# run C2 program
 run2:
+	./output/program/program
+
+
+# run Nim program
+run21:
 	./program_nim
 
 
@@ -98,8 +113,13 @@ run5:
 
 
 
-# run poop benchmark C and Nim programs
+# run poop benchmark C and C2 programs
 poop12:
+	poop ./program_c ./output/program/program
+
+
+# run poop benchmark C and Nim programs
+poop121:
 	poop ./program_c ./program_nim
 
 
@@ -129,5 +149,5 @@ poop15:
 
 
 default: all
-.PHONY: clean clean1 clean2 clean3 all c1 c2 c3 c30 c31 c32 c4 c5 run1 run2 run3 run4 run5 poop12 poop13 poop23 poop41 poop43 poop15
+.PHONY: clean clean1 clean2 clean21 clean3 all c1 c2 c21 c3 c30 c31 c32 c4 c5 run1 run2 run21 run3 run4 run5 poop121 poop13 poop23 poop41 poop43 poop15
 
