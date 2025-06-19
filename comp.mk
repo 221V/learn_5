@@ -71,12 +71,6 @@ c32:
 	dub build --compiler ldc2 --build release --force
 
 
-# compile OCaml program
-c4:
-	ocamlopt -o program_oc program.ml
-#	ocamlopt -o program module1.ml module2.ml
-
-
 # compile Zig program
 c5:
 	zig build-exe program.zig -O ReleaseFast -fstrip --name program_zig
@@ -100,11 +94,6 @@ run21:
 # run D program
 run3:
 	./program_d
-
-
-# run OCaml program
-run4:
-	./program_oc
 
 
 # run Zig program
@@ -133,21 +122,11 @@ poop23:
 	poop ./program_nim ./program_d
 
 
-# run poop benchmark OCaml and C programs
-poop41:
-	poop ./program_c ./program_oc
-
-
-# run poop benchmark OCaml and D programs
-poop43:
-	poop ./program_oc ./program_d
-
-
 # run poop benchmark C and Zig programs
 poop15:
 	poop ./program_c ./program_zig
 
 
 default: all
-.PHONY: clean clean1 clean2 clean21 clean3 all c1 c2 c21 c3 c30 c31 c32 c4 c5 run1 run2 run21 run3 run4 run5 poop121 poop13 poop23 poop41 poop43 poop15
+.PHONY: clean clean1 clean2 clean21 clean3 all c1 c2 c21 c3 c30 c31 c32 c5 run1 run2 run21 run3 run5 poop121 poop13 poop23 poop15
 
