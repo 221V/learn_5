@@ -9,7 +9,7 @@ $ make all
 # OR compile only C program
 $ make c1
 
-# OR compile only Nim program
+# OR compile only C2 program
 $ make c2
 
 # OR compile only D program (ldc2, with --betterC, single file program.d without deps)
@@ -28,25 +28,22 @@ $ make c32
 # run C program
 $ make run1
 
-# run Nim program
+# run C2 program
 $ make run2
 
 # run D program
 $ make run3
 
-# run poop benchmark C and Nim programs
+# run poop benchmark C and C2 programs
 $ make poop12
 
 # # run poop benchmark C and D programs
 $ make poop13
 
-# run poop benchmark Nim and D programs
-$ make poop23
-
 # delete C compiled
 $ make clean1
 
-# delete Nim compiled
+# delete C2 compiled
 $ make clean2
 
 # delete D compiled
