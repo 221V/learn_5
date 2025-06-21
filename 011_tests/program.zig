@@ -12,3 +12,7 @@ test "always secceds"{
   try expect(true);
 }
 
+test "always fails"{
+  try expect(false);
+}
+
