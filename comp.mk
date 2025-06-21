@@ -3,6 +3,7 @@
 # clean all compiled
 clean:
 	rm program_c
+	rm program_zig
 	rm program_d
 	rm -rf output
 
@@ -21,9 +22,13 @@ clean2:
 clean3:
 	rm program_d
 
+# clean Zig compiled
+clean5:
+	rm program_zig
+
 
 # compile all
-all: c1 c2 c3
+all: c1 c2 c3 c5
 
 
 # compile C program
