@@ -10,12 +10,6 @@ Please type number from 1 to 5 and press enter:
 3.5
 3 * 2 = 6
 
-$ make run2
-./program_nim
-Please type number from 1 to 5 and press enter:
-3.5
-strutils.nim(1137)       parseInt
-Error: unhandled exception: invalid integer: 3.5 [ValueError]
 
 # D like C
 
@@ -54,17 +48,5 @@ Benchmark 2 (10000 runs): ./program_d
   cache_references    157   ±  290        21   … 2.62K         720 ( 7%)        ⚡- 94.1% ±  0.6%
   cache_misses       6.04   ± 43.2         0   … 1.95K        1041 (10%)        ⚡- 67.3% ±  6.8%
   branch_misses      36.1   ±  121         4   …  911          606 ( 6%)        ⚡- 98.3% ±  0.2%
-
-
-$ make poop23
-poop ./program_nim ./program_d
-
-error: Benchmark 1 command './program_nim' failed with exit code 1:
-─────────────────── stderr ───────────────────
-syncio.nim(158)          raiseEOF
-Error: unhandled exception: EOF reached [EOFError]
-
-──────────────────────────────────────────────
-make: *** [../comp.mk:75: poop23] Error 1
 ```
 
