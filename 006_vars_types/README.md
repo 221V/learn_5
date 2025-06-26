@@ -6,19 +6,40 @@
 UNSIGNED MAX = 2 ** bits - 1  
 SIGNED MAX = 2 ** (bits - 1) - 1  
 ```
-| bits | C lang | D lang | Nim | from | to |
-| --- | --- | --- | --- | --- | --- |
-| 8 | char <br> int8_t | byte <br> char | int8 | -128 | 127 |
-| 16 | short <br> int16_t | short | int16 | -32768 | 32767 |
-| 32 | int <br> long <br> int32_t | int | int32 | -2147483648 | 2147483647 |
-| 64 | long long <br> int64_t | long | int64 | -9223372036854775808 | 9223372036854775807 |
-| <b>bits</b> | <b>C lang</b> | <b>D lang</b> | <b>Nim</b> | <b>from</b> | <b>to</b> |
-| 8 | unsigned char <br> uint8_t | ubyte | uint8 | 0 | 255 |
-| 16 | unsigned short <br> uint16_t | ushort | uint16 | 0 | 65535 |
-| 32 | unsigned int <br> unsigned long <br> uint32_t | uint | uint32 | 0 | 4294967295 |
-| 64 | unsigned long long <br> uint64_t | ulong | uint64 | 0 | 18446744073709551615 |
-| 128 | - | - | - | 0 | 340282366920938463463374607431768211455 |
+| bits | C lang | D lang | Nim | Zig | from | to |
+| --- | --- | --- | --- | --- | --- | --- |
+| 8 | char <br> int8_t | byte <br> char | int8 | i8 | -128 | 127 |
+| 16 | short <br> int16_t | short | int16 | i16 | -32768 | 32767 |
+| 32 | int <br> long <br> int32_t | int | int32 | i32 | -2147483648 | 2147483647 |
+| 64 | long long <br> int64_t | long | int64 | i64 | -9223372036854775808 | 9223372036854775807 |
+| 128 | - | - | - | i128 | -170141183460469231731687303715884105728 | 170141183460469231731687303715884105727 |
 
+| bits | C lang | D lang | Nim | Zig | from | to |
+| --- | --- | --- | --- | --- | --- | --- |
+| 8 | unsigned char <br> uint8_t | ubyte | uint8 | u8 | 0 | 255 |
+| 16 | unsigned short <br> uint16_t | ushort | uint16 | u16 | 0 | 65535 |
+| 32 | unsigned int <br> unsigned long <br> uint32_t | uint | uint32 | u32 | 0 | 4294967295 |
+| 64 | unsigned long long <br> uint64_t | ulong | uint64 | u64 | 0 | 18446744073709551615 |
+| 128 | - | - | - | u128 | 0 | 340282366920938463463374607431768211455 |
+
+.
+
+https://ziglang.org/documentation/0.13.0/#toc-Primitive-Types
+
+.
+.
+.
+
+zig
+const std = @import("std");
+
+pub fn main() !void{
+  std.debug.print("i128: [{d}, {d}]\n", .{ std.math.minInt(i128), std.math.maxInt(i128) });
+  std.debug.print("u128: [0, {d}]\n", .{std.math.maxInt(u128)});
+}
+
+i128: [-170141183460469231731687303715884105728, 170141183460469231731687303715884105727]
+u128: [0, 340282366920938463463374607431768211455]
 ```
 $ make run1
 ./program_c
