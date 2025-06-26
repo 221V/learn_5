@@ -20,6 +20,19 @@ Error: unhandled exception: invalid integer: 3.5 [ValueError]
 # D like C
 
 
+$ make run5
+./program_zig
+Please type number from 1 to 5 and press enter:
+3
+3 * 2 = 6
+
+
+$ make run5
+./program_zig
+Please type number from 1 to 5 and press enter:
+3.5
+Invalid number value!
+
 
 $ make poop13
 poop ./program_c ./program_d
