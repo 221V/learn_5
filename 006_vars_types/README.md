@@ -22,6 +22,15 @@ SIGNED MAX = 2 ** (bits - 1) - 1
 | 64 | unsigned long long <br> uint64_t | ulong | uint64 | u64 | 0 | 18446744073709551615 |
 | 128 | - | - | - | u128 | 0 | 340282366920938463463374607431768211455 |
 
+| bits | C lang | D lang | Nim | Zig | descr |
+| --- | --- | --- | --- | --- | --- |
+| 8 | - | - | - | - |  |
+| 16 | _Float16 | - | - | f16 | 16-bit floating point (10-bit mantissa) IEEE-754-2008 binary16 |
+| 32 | float | float | float32 | f32 | 32 bit floating point<br>32-bit floating point (23-bit mantissa) IEEE-754-2008 binary32 |
+| 64 | double | double | float64 | f64 | 64 bit floating point<br>64-bit floating point (52-bit mantissa) IEEE-754-2008 binary64 |
+| 80 | double | - | - | f80 | 80-bit floating point (64-bit mantissa) IEEE-754-2008 80-bit extended precision |
+| 128 | long double<br>_Float128 | - | - | f128 | 128-bit floating point (112-bit mantissa) IEEE-754-2008 binary128 |
+
 .
 
 https://ziglang.org/documentation/0.13.0/#toc-Primitive-Types
